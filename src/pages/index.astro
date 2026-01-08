@@ -86,7 +86,7 @@ import "../styles/global.css";
                     </p>
 
                     <!-- Feature Badges (2x2 grid, same size) -->
-                    <div class="grid grid-cols-2 gap-3 pt-4">
+                    <div class="grid grid-cols-2 max-md:grid-cols-1 gap-3 pt-4">
                         <!-- Consultation -->
                         <div
                             class="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-md border border-gray-100 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 w-full"
@@ -256,10 +256,10 @@ import "../styles/global.css";
 
             <!-- Team Members - Same Section -->
             <div
-                class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-16 pt-16 border-t border-gray-100"
+                class="grid grid-cols-1 xl:grid-cols-3 gap-4 xl:gap-6 mt-16 pt-16 border-t border-gray-100 justify-items-center xl:justify-items-start"
             >
                 <!-- Team Member 1: Peter Parker -->
-                <div class="flex items-center gap-5">
+                <div class="flex items-center gap-5 w-full max-w-sm">
                     <div class="relative flex-shrink-0">
                         <div
                             class="w-24 h-24 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-indigo-200 overflow-hidden"
@@ -303,7 +303,7 @@ import "../styles/global.css";
                 </div>
 
                 <!-- Team Member 2: Diana Prince -->
-                <div class="flex items-center gap-5">
+                <div class="flex items-center gap-5 w-full max-w-sm">
                     <div class="relative flex-shrink-0">
                         <div
                             class="w-24 h-24 bg-gradient-to-br from-amber-100 to-yellow-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-amber-200 overflow-hidden"
@@ -349,7 +349,7 @@ import "../styles/global.css";
                 </div>
 
                 <!-- Team Member 3: Barry Allen -->
-                <div class="flex items-center gap-5">
+                <div class="flex items-center gap-5 w-full max-w-sm">
                     <div class="relative flex-shrink-0">
                         <div
                             class="w-24 h-24 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-blue-200 overflow-hidden"
@@ -692,24 +692,32 @@ import "../styles/global.css";
     <footer class="bg-black text-white py-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-8 lg:px-16">
             <!-- Centered Content -->
-            <div class="flex items-center justify-center gap-4 mb-16">
-                <!-- Logo -->
-                <img
-                    src="/images/feai-logo.png"
-                    alt="FEAI Logo"
-                    class="w-10 h-10 rounded-lg"
-                />
-                <!-- Company Name -->
-                <div>
-                    <span class="block font-bold text-lg tracking-wide"
-                        >For Everyone AI</span
-                    >
-                    <span class="block text-xs text-gray-500">feai.io</span>
+            <div
+                class="flex flex-col md:flex-row items-center justify-center gap-4 mb-16"
+            >
+                <!-- Company Area -->
+                <div class="flex items-center gap-4">
+                    <!-- Logo -->
+                    <img
+                        src="/images/feai-logo.png"
+                        alt="FEAI Logo"
+                        class="w-10 h-10 rounded-lg"
+                    />
+                    <!-- Company Name -->
+                    <div>
+                        <span class="block font-bold text-lg tracking-wide"
+                            >For Everyone AI</span
+                        >
+                        <span class="block text-xs text-gray-500">feai.io</span>
+                    </div>
                 </div>
-                <!-- Divider -->
-                <div class="w-px h-8 bg-gray-700 mx-4"></div>
+                <!-- Divider: horizontal on mobile, vertical on desktop -->
+                <div class="w-full md:w-px h-px md:h-8 bg-gray-700 md:mx-4">
+                </div>
                 <!-- Tagline -->
-                <p class="text-gray-400 text-xs max-w-sm leading-relaxed">
+                <p
+                    class="text-gray-400 text-xs max-w-sm leading-relaxed text-center md:text-left"
+                >
                     AI automation made accessible for everyone.<br />Simple
                     setup, powerful results.
                 </p>
