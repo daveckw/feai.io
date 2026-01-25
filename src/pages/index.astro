@@ -12,9 +12,19 @@ import "../styles/global.css";
             >
                 <!-- Left Content -->
                 <div class="space-y-6 animate-on-scroll">
+                    <!-- Logo -->
+                    <div class="max-w-[160px] max-h-[130px] overflow-hidden -mb-4 -ml-4">
+                        <img
+                            src="/feai_logo/IMG_9102.PNG"
+                            alt="For Everyone AI Logo"
+                            class="w-full h-full object-contain object-left-top"
+                            style="margin: 0; padding: 0; display: block; line-height: 0; vertical-align: top;"
+                        />
+                    </div>
+
                     <!-- Headline -->
                     <h1
-                        class="text-4xl md:text-5xl font-bold leading-tight text-gray-900 tracking-tight"
+                        class="text-4xl md:text-5xl font-bold leading-tight text-gray-900 tracking-tight -mt-4"
                     >
                         Smart AI Solutions<br />Built for Everyone
                     </h1>
@@ -256,27 +266,15 @@ import "../styles/global.css";
 
             <!-- Team Members - Same Section -->
             <div
-                class="grid grid-cols-1 xl:grid-cols-3 gap-4 xl:gap-6 mt-16 pt-16 border-t border-gray-100 justify-items-center xl:justify-items-start"
+                class="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8 mt-16 pt-16 border-t border-gray-100"
             >
-                <!-- Team Member 1: Peter Parker -->
-                <div class="flex items-center gap-5 w-full max-w-sm">
-                    <div class="relative flex-shrink-0">
+                <!-- Team Member 1: Cardee Chang -->
+                <div class="flex flex-col items-center xl:items-start">
+                    <div class="relative flex-shrink-0 mb-4">
                         <div
-                            class="w-24 h-24 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-indigo-200 overflow-hidden"
+                            class="w-24 h-24 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center border-2 border-indigo-200 overflow-hidden shadow-sm"
                         >
-                            <svg
-                                class="w-10 h-10 text-indigo-300"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                ></path>
-                            </svg>
+                            <span class="text-2xl font-bold text-indigo-600">CC</span>
                         </div>
                         <div
                             class="absolute -bottom-1 -right-1 w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center"
@@ -292,35 +290,23 @@ import "../styles/global.css";
                             </svg>
                         </div>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900">Peter Parker</h3>
-                        <p class="text-gray-500 text-sm">Founder & CEO</p>
-                        <p class="text-gray-400 text-xs mt-1 leading-relaxed">
-                            12 Years AI & Automation<br />Former Tech Lead at
-                            Fortune 500
-                        </p>
+                    <div class="text-center xl:text-left">
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Cardee Chang</h3>
+                        <p class="text-gray-500 text-sm mb-3">Founder & CEO</p>
+                        <div class="text-gray-600 text-xs leading-relaxed space-y-1.5">
+                            <p class="font-semibold text-gray-700">8 years' experience in AI & Automation</p>
+                            <p>Hands-on practitioner applying AI to Sales & Marketing</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Team Member 2: Diana Prince -->
-                <div class="flex items-center gap-5 w-full max-w-sm">
-                    <div class="relative flex-shrink-0">
+                <!-- Team Member 2: Michael Jau -->
+                <div class="flex flex-col items-center xl:items-start">
+                    <div class="relative flex-shrink-0 mb-4">
                         <div
-                            class="w-24 h-24 bg-gradient-to-br from-amber-100 to-yellow-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-amber-200 overflow-hidden"
+                            class="w-24 h-24 bg-gradient-to-br from-amber-100 to-yellow-100 rounded-2xl flex items-center justify-center border-2 border-amber-200 overflow-hidden shadow-sm"
                         >
-                            <svg
-                                class="w-10 h-10 text-amber-300"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                ></path>
-                            </svg>
+                            <span class="text-2xl font-bold text-amber-600">MJ</span>
                         </div>
                         <div
                             class="absolute -bottom-1 -right-1 w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center"
@@ -336,37 +322,25 @@ import "../styles/global.css";
                             </svg>
                         </div>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900">Diana Prince</h3>
-                        <p class="text-gray-500 text-sm">
-                            Head of AI Development
+                    <div class="text-center xl:text-left">
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Michael Jau</h3>
+                        <p class="text-gray-500 text-sm mb-3">
+                            Co-Founder & Chief Operations Officer
                         </p>
-                        <p class="text-gray-400 text-xs mt-1 leading-relaxed">
-                            8 Years Machine Learning<br />Chatbot Architecture
-                            Expert
-                        </p>
+                        <div class="text-gray-600 text-xs leading-relaxed space-y-1.5">
+                            <p class="font-semibold text-gray-700">15 years' experience in Financial Services</p>
+                            <p>Led the first Insurance Agency & Mortgage Advisory to apply AI in standardized SOPs and Client CRM</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Team Member 3: Barry Allen -->
-                <div class="flex items-center gap-5 w-full max-w-sm">
-                    <div class="relative flex-shrink-0">
+                <!-- Team Member 3: Levine Tsai -->
+                <div class="flex flex-col items-center xl:items-start">
+                    <div class="relative flex-shrink-0 mb-4">
                         <div
-                            class="w-24 h-24 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-blue-200 overflow-hidden"
+                            class="w-24 h-24 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center border-2 border-blue-200 overflow-hidden shadow-sm"
                         >
-                            <svg
-                                class="w-10 h-10 text-blue-300"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                ></path>
-                            </svg>
+                            <span class="text-2xl font-bold text-blue-600">LT</span>
                         </div>
                         <div
                             class="absolute -bottom-1 -right-1 w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center"
@@ -382,15 +356,15 @@ import "../styles/global.css";
                             </svg>
                         </div>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900">Barry Allen</h3>
-                        <p class="text-gray-500 text-sm">
-                            Chief Operations Officer
+                    <div class="text-center xl:text-left">
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Levine Tsai</h3>
+                        <p class="text-gray-500 text-sm mb-3">
+                            Head of Technology Operations
                         </p>
-                        <p class="text-gray-400 text-xs mt-1 leading-relaxed">
-                            15 Years Tech Operations<br />Enterprise Solutions
-                            Specialist
-                        </p>
+                        <div class="text-gray-600 text-xs leading-relaxed space-y-1.5">
+                            <p class="font-semibold text-gray-700">10 years' experience in Tech Operations</p>
+                            <p>Chatbot Architecture Specialist</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -690,37 +664,26 @@ import "../styles/global.css";
 
     <!-- Section 10: Footer -->
     <footer class="bg-black text-white py-16 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-8 lg:px-16">
+        <div class="max-w-5xl mx-auto px-8 lg:px-16">
             <!-- Centered Content -->
-            <div
-                class="flex flex-col md:flex-row items-center justify-center gap-4 mb-16"
-            >
-                <!-- Company Area -->
-                <div class="flex items-center gap-4">
-                    <!-- Logo -->
+            <div class="flex flex-col items-center justify-center gap-6 mb-16">
+                <!-- Logo -->
+                <div class="overflow-hidden flex-shrink-0">
                     <img
-                        src="/images/feai-logo.png"
+                        src="/feai_logo/IMG_9107.JPG"
                         alt="FEAI Logo"
-                        class="w-10 h-10 rounded-lg"
+                        class="h-24 md:h-32 object-contain object-center"
+                        style="width: 120%; margin-left: -10%; margin-right: -10%; display: block;"
                     />
-                    <!-- Company Name -->
-                    <div>
-                        <span class="block font-bold text-lg tracking-wide"
-                            >For Everyone AI</span
-                        >
-                        <span class="block text-xs text-gray-500">feai.io</span>
-                    </div>
                 </div>
-                <!-- Divider: horizontal on mobile, vertical on desktop -->
-                <div class="w-full md:w-px h-px md:h-8 bg-gray-700 md:mx-4">
-                </div>
+                
                 <!-- Tagline -->
-                <p
-                    class="text-gray-400 text-xs max-w-sm leading-relaxed text-center md:text-left"
-                >
-                    AI automation made accessible for everyone.<br />Simple
-                    setup, powerful results.
-                </p>
+                <div class="text-center">
+                    <p class="text-gray-300 text-xs md:text-sm leading-relaxed">
+                        AI automation made accessible for everyone.<br />
+                        Simple setup, powerful results.
+                    </p>
+                </div>
             </div>
         </div>
 
