@@ -1,9 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Team from "../components/Team.astro";
+import FeatureHighlights from "../components/FeatureHighlights.astro";
 import "../styles/global.css";
+
+// URL for the app - update this to your actual sign up/sign in system
+const APP_URL = "https://app.feai.io";
+const currentYear = new Date().getFullYear();
 ---
 
 <Layout title="For Everyone AI | feai.io">
+    <!-- Navbar - fixed to avoid scroll-induced height changes -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-40 h-14 bg-white border-b border-gray-200"
+    >
+        <div
+            class="h-full max-w-7xl mx-auto px-8 lg:px-16 flex items-center justify-end"
+        >
+            <a
+                href={APP_URL}
+                class="inline-flex items-center justify-center px-6 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors duration-200"
+            >
+                Go to App
+            </a>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed navbar -->
+    <div class="h-14" aria-hidden="true"></div>
+
     <!-- Section 1: Hero -->
     <section class="bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto w-full px-8 lg:px-16 py-20 lg:py-28">
@@ -13,7 +38,9 @@ import "../styles/global.css";
                 <!-- Left Content -->
                 <div class="space-y-6 animate-on-scroll">
                     <!-- Logo -->
-                    <div class="max-w-[160px] max-h-[130px] overflow-hidden -mb-4 -ml-4">
+                    <div
+                        class="max-w-[160px] max-h-[130px] overflow-hidden -mb-4 -ml-4"
+                    >
                         <img
                             src="/feai_logo/IMG_9102.PNG"
                             alt="For Everyone AI Logo"
@@ -215,127 +242,7 @@ import "../styles/global.css";
     </section>
 
     <!-- Section 3: Why Choose Us + Team -->
-    <section id="why-choose-us" class="py-20 lg:py-40 bg-white overflow-hidden">
-        <div class="max-w-5xl mx-auto px-8 lg:px-16">
-            <div
-                class="flex flex-col lg:flex-row gap-12 lg:gap-40 items-center justify-center"
-            >
-                <!-- Left Content -->
-                <div class="space-y-5 animate-on-scroll">
-                    <!-- Section Label -->
-                    <span class="text-blue-500 text-sm font-medium"
-                        >The FEAI Difference</span
-                    >
-
-                    <!-- Headline -->
-                    <h2
-                        class="text-3xl md:text-4xl font-bold leading-tight text-gray-900 tracking-tight"
-                    >
-                        Your AI Partner<br />From Start to Success
-                    </h2>
-
-                    <!-- Subtext -->
-                    <p class="text-gray-500 text-sm leading-relaxed max-w-md">
-                        We do not just give you tools. We build, configure, and
-                        manage your entire AI system. Tailored to your business
-                        needs with ongoing optimization by our dedicated team.
-                    </p>
-
-                    <!-- Button -->
-                    <div class="pt-2">
-                        <a
-                            href="#contact"
-                            class="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors duration-200"
-                        >
-                            Schedule a Free Consultation
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Image - transparent, no frame -->
-                <div
-                    class="relative flex justify-center lg:justify-end animate-on-scroll stagger-2"
-                >
-                    <img
-                        src="/images/ai-globe-removebg-preview.png"
-                        alt="AI Globe"
-                        class="w-64 h-64 lg:w-80 lg:h-80 object-contain"
-                    />
-                </div>
-            </div>
-
-            <!-- Team Members - Same Section -->
-            <div
-                class="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8 mt-16 pt-16 border-t border-gray-100"
-            >
-                <!-- Team Member 1: Cardee Chang -->
-                <div class="flex flex-col items-center xl:items-start">
-                    <div class="relative flex-shrink-0 mb-4">
-                        <div
-                            class="w-40 aspect-[3/4] bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center border-2 border-indigo-200 overflow-hidden shadow-sm"
-                        >
-                            <span class="text-2xl font-bold text-indigo-600">CC</span>
-                        </div>
-                    </div>
-                    <div class="text-center xl:text-left">
-                        <h3 class="font-bold text-gray-900 text-lg mb-1">Cardee Chang</h3>
-                        <p class="text-gray-500 text-sm mb-3">Founder & CEO</p>
-                        <div class="text-gray-600 text-xs leading-relaxed space-y-1.5">
-                            <p class="font-semibold text-gray-700">8 years' experience in AI & Automation</p>
-                            <p>Hands-on practitioner applying AI to Sales & Marketing</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team Member 2: Michael Jau -->
-                <div class="flex flex-col items-center xl:items-start">
-                    <div class="relative flex-shrink-0 mb-4">
-                        <!-- Portrait avatar -->
-                        <div
-                            class="w-40 aspect-[3/4] bg-gradient-to-br from-amber-50 via-white to-amber-100 rounded-2xl border-2 border-amber-200 overflow-hidden shadow-sm"
-                        >
-                            <img
-                                src="/team_images/Michael_Jau.jpg"
-                                alt="Portrait of Michael Jau"
-                                class="w-full h-full object-cover object-center"
-                            />
-                        </div>
-                    </div>
-                    <div class="text-center xl:text-left">
-                        <h3 class="font-bold text-gray-900 text-lg mb-1">Michael Jau</h3>
-                        <p class="text-gray-500 text-sm mb-3">
-                            Co-Founder & Chief Operations Officer
-                        </p>
-                        <div class="text-gray-600 text-xs leading-relaxed space-y-1.5">
-                            <p class="font-semibold text-gray-700">15 years' experience in Financial Services</p>
-                            <p>Led the first Insurance Agency & Mortgage Advisory to apply AI in standardized SOPs and Client CRM</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team Member 3: Levine Tsai -->
-                <div class="flex flex-col items-center xl:items-start">
-                    <div class="relative flex-shrink-0 mb-4">
-                        <div
-                            class="w-40 aspect-[3/4] bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center border-2 border-blue-200 overflow-hidden shadow-sm"
-                        >
-                            <span class="text-2xl font-bold text-blue-600">LT</span>
-                        </div>
-                    </div>
-                    <div class="text-center xl:text-left">
-                        <h3 class="font-bold text-gray-900 text-lg mb-1">Levine Tsai</h3>
-                        <p class="text-gray-500 text-sm mb-3">
-                            Head of Technology Operations
-                        </p>
-                        <div class="text-gray-600 text-xs leading-relaxed space-y-1.5">
-                            <p class="font-semibold text-gray-700">10 years' experience in Tech Operations</p>
-                            <p>Chatbot Architecture Specialist</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <Team />
 
     <!-- Section 4: What Our AI Can Do -->
     <section
@@ -498,8 +405,10 @@ import "../styles/global.css";
         </div>
     </section>
 
+    <FeatureHighlights />
+
     <!-- Section 5: How Are We Different -->
-    <section id="how-different" class="py-20 lg:py-24 bg-white overflow-hidden">
+    <section id="how-different" class="py-20 lg:py-24 bg-gray-50 overflow-hidden">
         <div class="max-w-5xl mx-auto px-8 lg:px-16">
             <!-- Header Row -->
             <div
@@ -539,7 +448,7 @@ import "../styles/global.css";
             <!-- USP Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <!-- USP #1 -->
-                <div class="bg-gray-50 rounded-2xl p-6 flex flex-col h-full">
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col h-full">
                     <h3 class="font-bold text-gray-900 mb-2">
                         Contextual Memory
                     </h3>
@@ -559,7 +468,7 @@ import "../styles/global.css";
                 </div>
 
                 <!-- USP #2 -->
-                <div class="bg-gray-50 rounded-2xl p-6 flex flex-col h-full">
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col h-full">
                     <h3 class="font-bold text-gray-900 mb-2">
                         Smart Chat Flow
                     </h3>
@@ -579,7 +488,7 @@ import "../styles/global.css";
                 </div>
 
                 <!-- USP #3 -->
-                <div class="bg-gray-50 rounded-2xl p-6 flex flex-col h-full">
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col h-full">
                     <h3 class="font-bold text-gray-900 mb-2">
                         Lead Re-Engagement
                     </h3>
@@ -642,7 +551,7 @@ import "../styles/global.css";
                         style="width: 120%; margin-left: -10%; margin-right: -10%; display: block;"
                     />
                 </div>
-                
+
                 <!-- Tagline -->
                 <div class="text-center">
                     <p class="text-gray-300 text-xs md:text-sm leading-relaxed">
@@ -655,8 +564,8 @@ import "../styles/global.css";
 
         <!-- Copyright -->
         <div class="text-center">
-            <p class="text-gray-600 text-xs">
-                For Everyone AI (feai.io) © 2025. All rights reserved.
+            <p class="text-gray-300 text-xs">
+                For Everyone AI (feai.io) © {currentYear}. All rights reserved.
             </p>
         </div>
     </footer>
