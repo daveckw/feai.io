@@ -1,0 +1,201 @@
+---
+const testimonials = [
+    {
+        src: "/testimonial_videos/FEAI_Testimonial1_web.mp4",
+        name: "Alex Leong",
+        role: "Prime Leader, D&D",
+    },
+    {
+        src: "/testimonial_videos/FEAI_Testimonial2_web.mp4",
+        name: "Joyce",
+        role: "Business Partner, MAE",
+    },
+];
+---
+
+<section
+    id="testimonials"
+    class="py-20 lg:py-24 bg-gray-50 overflow-hidden"
+>
+    <div class="max-w-7xl mx-auto px-8 lg:px-16">
+        <!-- Section Header -->
+        <div class="text-center mb-12 lg:mb-16 animate-on-scroll space-y-4">
+            <span class="text-blue-500 text-sm font-medium">Testimonials</span>
+            <h2
+                class="text-3xl md:text-4xl font-bold leading-tight text-gray-900 tracking-tight"
+            >
+                Trusted by Leaders<br class="hidden sm:block" /> Who've Seen Results
+            </h2>
+            <p
+                class="text-gray-500 text-sm md:text-base leading-relaxed max-w-xl mx-auto"
+            >
+                Hear directly from business owners and team leaders who use FEAI
+                to scale their operations.
+            </p>
+        </div>
+
+        <!-- Carousel: active card + "up next" tile -->
+        <div
+            id="testimonial-carousel"
+            class="flex flex-col md:flex-row gap-4 md:gap-6 items-stretch max-w-5xl mx-auto animate-on-scroll"
+        >
+            {
+                testimonials.map((t, i) => (
+                    <button
+                        type="button"
+                        data-testimonial-card
+                        data-index={i}
+                        aria-label={`Play testimonial from ${t.name}`}
+                        class:list={[
+                            "group relative rounded-2xl overflow-hidden bg-black shadow-lg transition-all duration-500 ease-out text-left",
+                            i === 0
+                                ? "flex-[3] is-active"
+                                : "flex-1 opacity-75 hover:opacity-100 hover:shadow-xl",
+                        ]}
+                    >
+                        <div class="relative aspect-video w-full">
+                            <video
+                                class="w-full h-full object-cover"
+                                src={t.src}
+                                muted
+                                loop
+                                playsinline
+                                preload="metadata"
+                                controls={i === 0}
+                                controlslist="nodownload"
+                                data-testimonial-video
+                                aria-label={`Video testimonial from ${t.name}`}
+                            />
+
+                            {/* Gradient overlay (top, for caption legibility) */}
+                            <div class="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/85 via-black/40 to-transparent" />
+
+                            {/* "Click to Play" badge — shown on inactive card only */}
+                            <div
+                                data-up-next-badge
+                                class="absolute bottom-3 right-3 z-20 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm text-gray-900 text-[10px] font-semibold uppercase tracking-wide"
+                            >
+                                Click to Play
+                            </div>
+
+                            {/* Play icon overlay — shown on inactive card */}
+                            <div
+                                data-play-overlay
+                                class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-300"
+                            >
+                                <div class="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <svg
+                                        class="w-6 h-6 text-gray-900 ml-0.5"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            {/* Name caption (top-right, avoids blocking interviewee's face) */}
+                            <div class="absolute top-0 right-0 p-4 md:p-5 z-[5] max-w-[70%] text-right">
+                                <p class="text-white text-base md:text-lg font-semibold leading-tight [text-shadow:0_1px_2px_rgb(0_0_0_/_0.35)]">
+                                    {t.name}
+                                </p>
+                                <p class="text-white/85 text-xs md:text-sm mt-0.5 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.35)]">
+                                    {t.role}
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    [data-testimonial-card].is-active [data-up-next-badge],
+    [data-testimonial-card].is-active [data-play-overlay] {
+        display: none;
+    }
+</style>
+
+<script>
+    const carousel = document.getElementById("testimonial-carousel");
+    if (carousel) {
+        const cards = Array.from(
+            carousel.querySelectorAll<HTMLElement>("[data-testimonial-card]"),
+        );
+
+        function setActive(activeIndex: number) {
+            cards.forEach((card, i) => {
+                const video = card.querySelector<HTMLVideoElement>(
+                    "[data-testimonial-video]",
+                );
+                if (!video) return;
+
+                if (i === activeIndex) {
+                    card.classList.add("is-active", "flex-[3]");
+                    card.classList.remove(
+                        "flex-1",
+                        "opacity-75",
+                        "hover:opacity-100",
+                        "hover:shadow-xl",
+                    );
+                    video.controls = true;
+                    video.currentTime = 0;
+                    video.play().catch(() => {});
+                } else {
+                    card.classList.remove("is-active", "flex-[3]");
+                    card.classList.add(
+                        "flex-1",
+                        "opacity-75",
+                        "hover:opacity-100",
+                        "hover:shadow-xl",
+                    );
+                    video.pause();
+                    video.muted = true;
+                    video.controls = false;
+                }
+            });
+        }
+
+        cards.forEach((card, i) => {
+            card.addEventListener("click", (e) => {
+                // Don't switch when clicking inside the native video controls
+                const target = e.target as HTMLElement;
+                if (target.tagName === "VIDEO") return;
+                if (!card.classList.contains("is-active")) {
+                    setActive(i);
+                }
+            });
+        });
+
+        // Pause everything when carousel scrolls out of view; resume active when back
+        if ("IntersectionObserver" in window) {
+            const io = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const active = cards.find((c) =>
+                                c.classList.contains("is-active"),
+                            );
+                            const video = active?.querySelector<HTMLVideoElement>(
+                                "[data-testimonial-video]",
+                            );
+                            video?.play().catch(() => {});
+                        } else {
+                            cards.forEach((c) => {
+                                const v = c.querySelector<HTMLVideoElement>(
+                                    "[data-testimonial-video]",
+                                );
+                                v?.pause();
+                                if (v) v.muted = true;
+                            });
+                        }
+                    });
+                },
+                { threshold: 0.25 },
+            );
+            io.observe(carousel);
+        }
+    }
+</script>
